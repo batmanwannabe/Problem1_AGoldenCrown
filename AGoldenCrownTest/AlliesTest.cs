@@ -15,11 +15,23 @@ namespace AGoldenCrownTest
         [TestMethod]
         public void CheckForInvalidMessage()
         {
-            var ruler = new Ruler();
-            Assert.AreEqual(false, ruler.FindValidMessage("abc", "aaaa"));
-            Assert.AreEqual(false, ruler.FindValidMessage("123", "asdasdasd"));
-            Assert.AreEqual(false, ruler.FindValidMessage("abc", "12313"));
-            Assert.AreEqual(false, ruler.FindValidMessage("octopus", "Summer is coming"));
+            List<string> messages = new List<string>()
+            {
+                "Air, “oaaawaala”",
+                "Land, “a1d22n333a4444p”",
+                "Ice, “zmzmzmzaztzozh”"
+            };
+            var allies = new List<string>
+            {
+                "airrr",
+                "landdd",
+                "ice"
+            };
+
+            var ruler = new Ruler(messages, "King Shan");
+            var calculatedAllies = ruler.FindAllies();
+
+            Assert.AreEqual(false, Newtonsoft.Json.JsonConvert.SerializeObject(allies) == Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
         }
 
         [TestMethod]
