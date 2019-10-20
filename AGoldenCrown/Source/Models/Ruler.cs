@@ -31,23 +31,23 @@ namespace AGoldenCrown
                 switch (kingdom)
                 {
                     case Southeros.Land:
-                        if(FindValidMessage(Southeros.Emblems[Southeros.Land], kingdomMessage[1]))
+                        if(IsMessageValidSecret(Southeros.Emblems[Southeros.Land], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
                     case Southeros.Water:
-                        if(FindValidMessage(Southeros.Emblems[Southeros.Water], kingdomMessage[1]))
+                        if(IsMessageValidSecret(Southeros.Emblems[Southeros.Water], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
                     case Southeros.Ice:
-                        if(FindValidMessage(Southeros.Emblems[Southeros.Ice], kingdomMessage[1]))
+                        if(IsMessageValidSecret(Southeros.Emblems[Southeros.Ice], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
                     case Southeros.Air:
-                        if(FindValidMessage(Southeros.Emblems[Southeros.Air], kingdomMessage[1]))
+                        if(IsMessageValidSecret(Southeros.Emblems[Southeros.Air], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
                     case Southeros.Fire:
-                        if(FindValidMessage(Southeros.Emblems[Southeros.Fire], kingdomMessage[1]))
+                        if(IsMessageValidSecret(Southeros.Emblems[Southeros.Fire], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
                 }
@@ -55,7 +55,7 @@ namespace AGoldenCrown
 
             return Allies;
         }
-        public bool FindValidMessage(string emblem, string message)
+        public bool IsMessageValidSecret(string emblem, string message)
         {
             foreach (var i in emblem)
             {

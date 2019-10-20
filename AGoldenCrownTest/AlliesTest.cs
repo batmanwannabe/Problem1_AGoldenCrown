@@ -29,7 +29,6 @@ namespace AGoldenCrownTest
             };
 
             var ruler = new Ruler(messages, "King Shan");
-            var calculatedAllies = ruler.FindAllies();
 
             Assert.AreEqual(false, Newtonsoft.Json.JsonConvert.SerializeObject(allies) == Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
         }
@@ -51,9 +50,9 @@ namespace AGoldenCrownTest
             };
 
             var ruler = new Ruler(messages, "King Shan");
-            var calculatedAllies = ruler.FindAllies();
+            ruler.FindAllies();
 
-            Assert.AreEqual(allies.Count(), calculatedAllies.Count());
+            Assert.AreEqual(allies.Count(), ruler.Allies.Count());
             Assert.AreEqual(Newtonsoft.Json.JsonConvert.SerializeObject(allies), Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
         }
     }
