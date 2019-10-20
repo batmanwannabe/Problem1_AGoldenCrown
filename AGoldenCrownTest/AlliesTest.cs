@@ -1,11 +1,7 @@
 ﻿using AGoldenCrown;
-using DeepEqual.Syntax;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AGoldenCrownTest
 {
@@ -33,8 +29,11 @@ namespace AGoldenCrownTest
             Assert.AreEqual(false, Newtonsoft.Json.JsonConvert.SerializeObject(allies) == Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
         }
 
+        /// <summary>
+        /// Test for valid messages with all Small leters
+        /// </summary>
         [TestMethod]
-        public void CheckForValidMessage()
+        public void CheckForValidMessageCase1()
         {
             List<string> messages = new List<string>()
             {
@@ -47,6 +46,32 @@ namespace AGoldenCrownTest
                 "air",
                 "land",
                 "ice"
+            };
+
+            var ruler = new Ruler(messages, "King Shan");
+            ruler.FindAllies();
+
+            Assert.AreEqual(allies.Count(), ruler.Allies.Count());
+            Assert.AreEqual(Newtonsoft.Json.JsonConvert.SerializeObject(allies), Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
+        }
+
+        /// <summary>
+        /// Test for valid messages with mixed case
+        /// </summary>
+        [TestMethod]
+        public void CheckForValidMessageCase2()
+        {
+            List<string> messages = new List<string>()
+            {
+                "Fire, \"Drag on Martin!\"",
+                "Air, \"oaaawaala\"",
+                "Land, \"Die or play the lame of thrones\""
+            };
+            var allies = new List<string>
+            {
+                "fire",
+                "air",
+                "land"
             };
 
             var ruler = new Ruler(messages, "King Shan");

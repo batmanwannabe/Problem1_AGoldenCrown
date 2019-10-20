@@ -26,8 +26,8 @@ namespace AGoldenCrown
             string kingdom = string.Empty;
             foreach (var i in MessagesWithKingdoms)
             {
-                string[] kingdomMessage = i.Split(new[] { ' ' }, 2);
-                kingdom = kingdomMessage[0].ToLower().Replace(",", "");
+                string[] kingdomMessage = i.ToLower().Split(new[] { ' ' }, 2);
+                kingdom = kingdomMessage[0].Replace(",", "");
                 switch (kingdom)
                 {
                     case Southeros.Land:
