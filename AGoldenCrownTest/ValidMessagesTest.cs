@@ -1,7 +1,4 @@
-﻿using System;
-using AGoldenCrown;
-using AGoldenCrown.Source.Models;
-using AGoldenCrown.Source.Statics;
+﻿using AGoldenCrown.Source.Statics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AGoldenCrownTest

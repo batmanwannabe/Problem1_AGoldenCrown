@@ -1,5 +1,4 @@
-﻿using AGoldenCrown;
-using AGoldenCrown.Source.Models;
+﻿using AGoldenCrown.Source.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;

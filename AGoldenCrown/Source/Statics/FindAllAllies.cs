@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AGoldenCrown.Source.Statics
 {
@@ -12,6 +10,7 @@ namespace AGoldenCrown.Source.Statics
     public static class FindAllAllies
     {
         public static List<string> Allies { get; private set; }
+
         public static IEnumerable<String> FindAllies(IEnumerable<String> messages)
         {
             string kingdom;
@@ -26,18 +25,22 @@ namespace AGoldenCrown.Source.Statics
                         if (IsMessageValidSecret((string)Southeros.KingdomEmblems["land"], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
+
                     case "water":
                         if (IsMessageValidSecret((string)Southeros.KingdomEmblems["water"], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
+
                     case "ice":
                         if (IsMessageValidSecret((string)Southeros.KingdomEmblems["ice"], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
+
                     case "air":
                         if (IsMessageValidSecret((string)Southeros.KingdomEmblems["air"], kingdomMessage[1]))
                             Allies.Add(kingdom);
                         break;
+
                     case "fire":
                         if (IsMessageValidSecret((string)Southeros.KingdomEmblems["fire"], kingdomMessage[1]))
                             Allies.Add(kingdom);
@@ -47,6 +50,7 @@ namespace AGoldenCrown.Source.Statics
 
             return Allies;
         }
+
         public static bool IsMessageValidSecret(string emblem, string message)
         {
             foreach (var i in emblem)

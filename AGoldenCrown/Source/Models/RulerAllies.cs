@@ -8,8 +8,8 @@ namespace AGoldenCrown.Source.Models
     {
         public RulerAllies()
         {
-
         }
+
         public RulerAllies(IEnumerable<string> messages, string rulerName)
         {
             MessagesWithKingdoms = messages;
@@ -18,6 +18,5 @@ namespace AGoldenCrown.Source.Models
         }
 
         public IEnumerable<String> Allies { get; private set; }
-        
     }
 }
