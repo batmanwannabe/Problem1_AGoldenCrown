@@ -1,4 +1,5 @@
 ﻿using AGoldenCrown;
+using AGoldenCrown.Source.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace AGoldenCrownTest
                 "ice"
             };
 
-            var ruler = new Ruler(messages, "King Shan");
+            var ruler = new RulerAllies(messages, "King Shan");
 
             Assert.AreEqual(false, Newtonsoft.Json.JsonConvert.SerializeObject(allies) == Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
         }
@@ -48,8 +49,7 @@ namespace AGoldenCrownTest
                 "ice"
             };
 
-            var ruler = new Ruler(messages, "King Shan");
-            ruler.FindAllies();
+            var ruler = new RulerAllies(messages, "King Shan");
 
             Assert.AreEqual(allies.Count(), ruler.Allies.Count());
             Assert.AreEqual(Newtonsoft.Json.JsonConvert.SerializeObject(allies), Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));
@@ -74,8 +74,7 @@ namespace AGoldenCrownTest
                 "land"
             };
 
-            var ruler = new Ruler(messages, "King Shan");
-            ruler.FindAllies();
+            var ruler = new RulerAllies(messages, "King Shan");
 
             Assert.AreEqual(allies.Count(), ruler.Allies.Count());
             Assert.AreEqual(Newtonsoft.Json.JsonConvert.SerializeObject(allies), Newtonsoft.Json.JsonConvert.SerializeObject(ruler.Allies));

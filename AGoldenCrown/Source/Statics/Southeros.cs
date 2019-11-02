@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,10 @@ namespace AGoldenCrown
 {
     public static class Southeros
     {
-        public static readonly Dictionary<string, string> Emblems = new Dictionary<string, string>
+        /// <summary>
+        /// Hashtable as DS to store and retrieve Kingdom and Emblems.
+        /// </summary>
+        public static readonly Hashtable KingdomEmblems = new Hashtable
         {
             { "land", "panda" },
             { "water", "octopus" },
@@ -16,13 +20,5 @@ namespace AGoldenCrown
             { "air", "owl" },
             { "fire", "dragon" },
         };
-
-        public const string Land = "land";
-        public const string Water = "water";
-        public const string Ice = "ice";
-        public const string Air = "air";
-        public const string Fire = "fire";
-
-
     }
 }

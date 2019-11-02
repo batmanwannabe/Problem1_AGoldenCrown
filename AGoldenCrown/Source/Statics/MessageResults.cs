@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AGoldenCrown.Source.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace AGoldenCrown.Source
         /// Prints the ruler, accepts Ruler object
         /// </summary>
         /// <param name="ruler"></param>
-        public static void PrintMessageResults(Ruler ruler)
+        public static void PrintMessageResults(RulerAllies ruler)
         {
             if (ruler.Allies.Count() > 2)
             {

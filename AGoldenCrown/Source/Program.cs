@@ -1,4 +1,5 @@
 ﻿using AGoldenCrown.Source;
+using AGoldenCrown.Source.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +22,7 @@ namespace AGoldenCrown
             for (int i = 0; i < noOfMessages; i++)
                 messages.Add(Console.ReadLine());
 
-            var ruler = new Ruler(messages, "King Shan");
-            ruler.FindAllies();
+            var ruler = new RulerAllies(messages, "King Shan");
 
             MessageResults.PrintMessageResults(ruler);
         }
