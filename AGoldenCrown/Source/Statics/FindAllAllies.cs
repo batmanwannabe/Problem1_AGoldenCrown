@@ -11,6 +11,11 @@ namespace AGoldenCrown.Source.Statics
     {
         public static List<string> Allies { get; private set; }
 
+        /// <summary>
+        /// Find Allies by Count of Each char in Message and Emblem
+        /// </summary>
+        /// <param name="messages"></param>
+        /// <returns></returns>
         public static IEnumerable<String> FindAllies(IEnumerable<String> messages)
         {
             string kingdom;
